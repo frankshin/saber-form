@@ -21,7 +21,7 @@ Vue.use(SaberForm)
 
 ### 概览
 ```html
-<ll-form
+<saber-form
   :form-configs="object"
   :export-form-data="function"
   :default-form-data="formData"
@@ -449,7 +449,7 @@ items数据结构
 ### footer定制
 1、 完全自定义footer模块以及表单项存在非配置生成的表单项，可通过ref绑定的方式实现定制化
 ```html
-<ll-form
+<saber-form
   ref="xxx"
   :form-configs="queryConfig"
   :export-form-data="query"
