@@ -1,6 +1,6 @@
 {
   "name": "saber-form",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "common form solution",
   "homepage": "https://github.com/frankshin/saber-form",
   "main": "dist/index.js",

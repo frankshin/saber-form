@@ -38,7 +38,6 @@ inquirer
       )
       await execa('git', ['tag', '-a', `v${v}`, '-m', `build version: ${v}`])
       await execa('git', ['push', 'origin', 'main'], { stdio: 'inherit' })
-      await execa('npm', ['publish'], { stdio: 'inherit' })
     }
     task()
   })
