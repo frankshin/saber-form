@@ -10,7 +10,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "build": "webpack --config configs/webpack.dev.js",
-    "prod": "node scripts/prod.js"
+    "prod": "node scripts/prod.js",
+    "release": "node scripts/npm.js"
   },
   "repository": {
     "type": "git",

@@ -56,7 +56,7 @@ export default {
   },
   watch: {
     data: function() {
-      if (this.data && isObject(this.data)) {
+      if (this.data && isObject(this.data) && this.data[this.name]) {
         this.defaultFiles = this.data[this.name]
       }
     }
