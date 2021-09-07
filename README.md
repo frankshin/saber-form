@@ -248,9 +248,10 @@ items数据结构
       },
       componentProps: {
         name: 'name',
+        change: Function, // 绑定值变化时触发的事件
         option: [
           {
-            label: '最大货量',
+            label: 'label',
             value: 'Y',
             extends: [ // 扩展填写项
               {
@@ -264,7 +265,7 @@ items数据结构
                 },
                 componentProps: {
                   name: 'maxVolume',
-                  placeholder: '输入最大货量值',
+                  placeholder: '输入xxx',
                 },
                 unit: {
                   label: 'xxxx' // 扩展组件后面的备注式文案，如单位：<Input> 元
