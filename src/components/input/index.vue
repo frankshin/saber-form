@@ -4,8 +4,8 @@
       <el-input
         v-model="data[topComponentProperty.name]"
         style="width: 100%"
-        v-bind="topComponentProperty"
-        @input="input"
+        v-bind="attributes"
+        v-on="events"
       />
     </el-col>
     <!-- 扩展组件 -->
@@ -23,7 +23,9 @@
             v-if="extend.type === BUTTON && extend.display"
             v-bind="extend.componentProps"
             @click="extend.componentProps.click"
-          >{{ extend.componentProps.text }}</el-button>
+          >
+            {{ extend.componentProps.text }}
+          </el-button>
         </el-col>
       </el-row>
     </el-col>
@@ -35,7 +37,6 @@
       <span>{{ unit.label }}</span>
     </el-col>
   </el-row>
-
 </template>
 
 <script>
@@ -62,9 +63,10 @@ export default {
   },
   data() {
     return {
+      attributes: {},
+      events: {},
       extendComponents: {},
       unit: '',
-      input: null,
       topComponentProperty: {},
       ...FORM_COMPONENTS,
     }
@@ -81,14 +83,16 @@ export default {
     resetData(propsData) {
       // ps: restParams需保证是纯属性对象，以避免一些异常问题
       const {
-        input = () => {},
+        attributes,
+        events,
         extends: extendComponents,
         unit,
-        ...restParams,
+        ...restParams
       } = propsData
+      this.attributes = attributes
+      this.events = events
       this.extendComponents = extendComponents
       this.unit = unit
-      this.input = input
       this.topComponentProperty = restParams
     }
   },
