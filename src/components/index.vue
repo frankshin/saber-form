@@ -7,6 +7,7 @@
     <el-row v-for="item in formConfigs.items" :key="item.label">
       <el-col v-if="!item.children" :span="item.span || 24">
         <el-form-item
+          v-if="item.display !== false"
           v-bind="formItemBinds(item.formProps)"
           :prop="item.formProps.name"
         >
@@ -22,6 +23,7 @@
         <el-row :gutter="20">
           <el-col v-for="child in item.children" :key="child.label" :span="child.span || 24">
             <el-form-item
+              v-if="item.display !== false"
               v-bind="formItemBinds(child.formProps)"
               :prop="child.formProps.name"
             >
